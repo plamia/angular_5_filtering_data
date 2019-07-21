@@ -1,0 +1,11 @@
+<header id="header">
+    <div class="container">
+        <h6 (click)="goToHome()"> Home</h6>
+        <nav id="nav" (click)="select($event)">
+            <ul [ngClass]="{'open':selected}">
+                <li class="titleEmployees" (click)="clickEmployeesData()">Employees</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+

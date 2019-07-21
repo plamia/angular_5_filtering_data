@@ -1,0 +1,61 @@
+@import './variables';
+@import './mixins/responsive';
+
+body {
+    background-color: $brand-dark-white;
+}
+
+.container-fluid {
+    padding: 0px;
+    margin: 0px;
+    & .padding-0 {
+        padding: 0px;
+    }
+}
+
+.employees-navbar {
+    background: $brand-light-yellow;
+    color: $brand-blue-title;
+    & h2 {
+        text-align: center;
+        font-weight: 100;
+    }
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.welcome-title {
+    text-align: center;
+    font-weight: 100;
+    color: $brand-blue-title;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.margin-10-top {
+    margin-top: 10px;
+}
+
+.title-table {
+   text-align: center;
+   color: $brand-blue-title;
+}
+
+.background-white {
+   background-color: $brand-white;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+    & > div {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+

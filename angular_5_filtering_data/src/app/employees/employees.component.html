@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12 employees-navbar">
+            <h2 class="title-employees">Amount of income tax, national insurance and take home annual salary after deductions</h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 background-white">
+         <div class="container">
+                <form class="margin-top-20">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                                <input type="text" class="form-control" name="searchString" placeholder="Type to search by firstname or surname" (keyup)="clearFilter($event)"
+                                    [(ngModel)]="query">
+                            </div>
+                            <div class="suggestions" *ngIf="query !== '' && isShowed">
+                                <table>
+                                    <tr *ngFor="let item of allEmployees | filter : 'firstName' : 'surname' : query; let i = index">
+                                        <td tabindex="{{i}}" (blur)="hideSuggestions($event)" (click)="select(item)"><a>{{item.firstName}} {{item.surname}}</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                    </div>
+                </form>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Gender</th>
+                                <th>Title</th>
+                                <th>First Name</th>
+                                <th>Surname</th>
+                                <th>Date Of Bigth</th>
+                                <th>Age</th>
+                                <th>Salary</th>
+                                <th>Take Home</th>
+                                <th>Income Tax</th>
+                                <th>National Insurance</th>
+                            </tr>
+
+                        </thead>
+                        <tbody class="rowOftable" *ngFor="let employee of filteredList">
+                            <tr>
+                                <td>{{employee.id}}</td>
+                                <td>{{employee.gender}}</td>
+                                <td>{{employee.title}}</td>
+                                <td>{{employee.firstName}}</td>
+                                <td>{{employee.surname}}</td>
+                                <td>{{employee.dateOfBigth}}</td>
+                                <td>{{employee.age}}</td>
+                                <td>{{employee.salary}}</td>
+                                <td>{{employee.takeHome}}</td>
+                                <td>{{employee.incomeTax}}</td>
+                                <td>{{employee.nationalInsurance}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+</div>
